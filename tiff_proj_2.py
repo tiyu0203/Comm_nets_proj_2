@@ -27,6 +27,7 @@ def scan_port(hostname, port):
             tcp = sock.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF) -1
             os = OS(ttl, tcp)
             data.append(['Status: '+ errno.errorcode[result], 'hostname: ' + hostname, 'port: ' + str(port), 'server: ' + str(server), 'TTL:' + str(ttl),'TCP: ' + str(tcp), 'OS: ' + str(os)])
+        data.append([errno.errorcode[result], hostname, port])
 
         sock.close()
 
