@@ -32,7 +32,7 @@ def scan_port(hostname, port):
         sock.close()
 
     except KeyboardInterrupt:
-        print ("You pressed Ctrl+C")
+        print ("You pressed Ctrl+C. Exiting")
         sys.exit()
 
     except socket.gaierror:
@@ -40,7 +40,7 @@ def scan_port(hostname, port):
         sys.exit()
 
     except socket.error:
-        print ("Couldn't connect to server")
+        print ("Could not connect to server. Exiting")
         sys.exit()
 
 def OS(ttl, tcp):
