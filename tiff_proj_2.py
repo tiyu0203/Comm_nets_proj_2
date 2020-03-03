@@ -12,7 +12,7 @@ errno.errorcode[0] = "Open"
 def scan_port(hostname, port):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP)
-        sock.settimeout(.5)
+        sock.settimeout(.01)
         result = sock.connect_ex((hostname, port))
         # Connect the socket to a remote address; the address is usually a (host address, port #) tuple. This will return an error code instead of raising an exception. A value of 0 means success.
 
